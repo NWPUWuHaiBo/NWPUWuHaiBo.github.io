@@ -180,6 +180,9 @@
         <a href="/2019/06/30/Hexo-Github搭建个人博客入坑全过程/" class="archive-article-date">
   	<time datetime="2019-06-30T15:53:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
+
+
+
        
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -189,7 +192,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">693字</span>
+        <span class="post-count">754字</span>
       </span>
     </span>
 
@@ -214,46 +217,74 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为是在读研究生，所以得为找工作谋划谋划，算不上技术博客也就是分享一下我学习的心得感受吧。最初是从up主codesheep那看到的搭建一个个人博客，于是我开始了自己的入坑全过程。</p>
 <hr>
-<h2 id="一、Hexo配置安装与运行"><a href="#一、Hexo配置安装与运行" class="headerlink" title="一、Hexo配置安装与运行"></a>一、Hexo配置安装与运行</h2><p>1.首先我们要知道Hexo是一个基于Node.js开发的，所以需要下载安装<a href https: nodejs.org en "">Node.js</a>，Node.js安装过程自行体会，不会的面壁，使用下方命令验证安装是否正确</p>
+<h2 id="一、Hexo配置安装与运行"><a href="#一、Hexo配置安装与运行" class="headerlink" title="一、Hexo配置安装与运行"></a>一、Hexo配置安装与运行</h2><ol>
+<li><p>首先我们要知道Hexo是一个基于Node.js开发的，所以需要下载安装<a href https: nodejs.org en "">Node.js</a>，Node.js安装过程自行体会，不会的面壁，使用下方命令验证安装是否正确</p>
 <blockquote>
 <p>npm-v</p>
 </blockquote>
-<p>2.如果你是window环境下安装使用，需要有Git环境，建议下载<a href https: git-scm.com downloads"">Git Bash</a>，后续在</p>
-<p>3.与Ubuntu原因类似，更换npm（Node Package Manager）源， 这里我使用的是淘宝的源</p>
+</li>
+<li><p>如果你是window环境下安装使用，需要有Git环境，建议下载<a href https: git-scm.com downloads"">Git Bash</a>，后续在</p>
+</li>
+<li><p>与Ubuntu原因类似，更换npm（Node Package Manager）源， 这里我使用的是淘宝的源</p>
 <blockquote>
 <p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
 </blockquote>
-<p> 验证一下当前确实可用：</p>
+<p>验证一下当前确实可用：</p>
 <blockquote>
 <p>cnpm -v</p>
 </blockquote>
-<p> <img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701173409.png" alt="效果图"><br>4.安装Hexo客户端，无敌简单</p>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/14227444-0685dfc04a81ac6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Node.js安装验证"></p>
+<ol start="4">
+<li><p>安装Hexo客户端，无敌简单</p>
 <blockquote>
 <p>npm install -g hexo-cli</p>
 </blockquote>
-<p> 通过<strong>hexo -v</strong>来验证<br>5.mkdir一个文件夹，来存放blog的所有文件，所有的文件都在这个文件夹下，如果后续出了什么bug或者进行电脑移植，对这个文件夹操作就OK了</p>
+<p>通过<strong>hexo -v</strong>来验证</p>
+</li>
+<li><p>mkdir一个文件夹，来存放blog的所有文件，所有的文件都在这个文件夹下，如果后续出了什么bug或者进行电脑移植，对这个文件夹操作就OK了</p>
+</li>
+</ol>
 <ul>
 <li>cd 到当前创建的blog的文件夹下</li>
 <li>进行初始化：<strong>hexo init</strong>，这里需要Git环境的，可能会比较慢，耐心等待</li>
-<li>最终生成的文件如图所示：<br><img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701175400.png" alt></li>
+<li>最终生成的文件如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-d5407316cfe1d3a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本地文件生成样式"></li>
 </ul>
-<p>6.四个简单重要的命令</p>
-<blockquote>
+<ol start="6">
+<li>四个简单重要的命令<blockquote>
 <p>hexo n “我的第一篇博文”  #新建一篇博文，会在/source/_posts下生成一个.md文件<br>hexo clean  #清理当前工作空间<br>hexo g   #这里的g是generate的缩写，表示生成静态资源<br>hexo s  #开启本地服务  </p>
 </blockquote>
-<p>效果图如下：<br><img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701180659.png" alt><br>我们可以通过：<strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong> 实现本地访问</p>
+</li>
+</ol>
+<p>效果图如下：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-90b719bca29086db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="四个命令"></p>
+<p>我们可以通过：<strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong> 实现本地访问</p>
 <p>至此，hexo的安装与运行过程结束</p>
 <hr>
-<h2 id="二、发布到Github"><a href="#二、发布到Github" class="headerlink" title="二、发布到Github"></a>二、发布到Github</h2><p>我觉得建一个公网可以访问的web，还是蛮骄傲的事情吧！（我大概是个傲娇的人hhh）<br>1.登陆github账号，右上角+号，新建一个repository<br>2.这里repo的命名是很讲究的：必须是 github的username.github.io,如下图所示：<br><img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701184414.png" alt><br>3.需要安装一个插件：</p>
+<h2 id="二、发布到Github"><a href="#二、发布到Github" class="headerlink" title="二、发布到Github"></a>二、发布到Github</h2><p>我觉得建一个公网可以访问的web，还是蛮骄傲的事情吧！（我大概是个傲娇的人hhh）</p>
+<ol>
+<li><p>登陆github账号，右上角+号，新建一个repository</p>
+</li>
+<li><p>这里repo的命名是很讲究的：必须是 github的username.github.io,如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-4eede0c42a1dc52a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+</li>
+<li><p>需要安装一个插件：</p>
 <blockquote>
 <p>cnpm install –save hexo-deployer-git </p>
 </blockquote>
-<p>这里会有一个Warning忽略即可<br>4.文件配置，在blog文件下有一个很重要的文件 _config.yml ，后续的一些列美化都会用到这个文件<br>  打开，找到deploy节点，进行填充，如图：<br><img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701185146.png" alt></p>
-<p>5.部署到远端，，过程中需要输入github账号和密码<br> <strong>这里的密码输入默认是无显示的，大家不要以为是没输入进去</strong></p>
-<blockquote>
+</li>
+</ol>
+<p>这里会有一个Warning忽略即可</p>
+<ol start="4">
+<li>文件配置，在blog文件下有一个很重要的文件 _config.yml ，后续的一些列美化都会用到这个文件<br>打开，找到deploy节点，进行填充，如图：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-96b2eea375214aec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改配置文件"></li>
+</ol>
+<ol start="5">
+<li>部署到远端，，过程中需要输入github账号和密码<br><strong>这里的密码输入默认是无显示的，大家不要以为是没输入进去</strong><blockquote>
 <p>hexo d  </p>
 </blockquote>
-<p>如图所示：<br><img src="http://pty6pzxlj.bkt.clouddn.com/qiniu_blog/20190701185855.png" alt><br>至此，大功告成，我们可以登录网站查看，地址对应的改成自己的就ok了，可能会有一点延迟：<br><a href="https://note.youdao.com/" target="_blank" rel="noopener"></a><a href="https://nwpuwuhaibo.github.io/" target="_blank" rel="noopener">https://nwpuwuhaibo.github.io/</a></p>
+</li>
+</ol>
+<p>如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-003911d59cc4545d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="push到github"><br>至此，大功告成，我们可以登录网站查看，地址对应的改成自己的就ok了，可能会有一点延迟：<br><a href="https://note.youdao.com/" target="_blank" rel="noopener"></a><a href="https://nwpuwuhaibo.github.io/" target="_blank" rel="noopener">https://nwpuwuhaibo.github.io/</a></p>
+<p>##后续<br>1.当前自带的样式你一定不喜欢，下一篇文章告诉你如何更换主题<br>2.更换中的一些注意事项<br>3.如何用markdown开始写第一篇博文<br>4.如何用图床提高自己的写作效率</p>
 
       
 
@@ -317,6 +348,9 @@
         <a href="/2019/06/30/海波的一篇文章/" class="archive-article-date">
   	<time datetime="2019-06-30T08:51:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
+
+
+
        
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -412,6 +446,9 @@
         <a href="/2019/06/30/hello-world/" class="archive-article-date">
   	<time datetime="2019-06-30T08:45:07.683Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
+
+
+
        
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -517,6 +554,18 @@
       	</div>
     </div>
   </div>
+  
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
 </footer>
 
     </div>
