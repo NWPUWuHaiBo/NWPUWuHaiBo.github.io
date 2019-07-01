@@ -216,76 +216,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为是在读研究生，所以得为找工作谋划谋划，算不上技术博客也就是分享一下我学习的心得感受吧。最初是从up主codesheep那看到的搭建一个个人博客，于是我开始了自己的入坑全过程。</p>
-<hr>
-<h2 id="一、Hexo配置安装与运行"><a href="#一、Hexo配置安装与运行" class="headerlink" title="一、Hexo配置安装与运行"></a>一、Hexo配置安装与运行</h2><ol>
-<li><p>首先我们要知道Hexo是一个基于Node.js开发的，所以需要下载安装<a href https: nodejs.org en "">Node.js</a>，Node.js安装过程自行体会，不会的面壁，使用下方命令验证安装是否正确</p>
-<blockquote>
-<p>npm-v</p>
-</blockquote>
-</li>
-<li><p>如果你是window环境下安装使用，需要有Git环境，建议下载<a href https: git-scm.com downloads"">Git Bash</a>，后续在</p>
-</li>
-<li><p>与Ubuntu原因类似，更换npm（Node Package Manager）源， 这里我使用的是淘宝的源</p>
-<blockquote>
-<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
-</blockquote>
-<p>验证一下当前确实可用：</p>
-<blockquote>
-<p>cnpm -v</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/14227444-0685dfc04a81ac6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Node.js安装验证"></p>
-<ol start="4">
-<li><p>安装Hexo客户端，无敌简单</p>
-<blockquote>
-<p>npm install -g hexo-cli</p>
-</blockquote>
-<p>通过<strong>hexo -v</strong>来验证</p>
-</li>
-<li><p>mkdir一个文件夹，来存放blog的所有文件，所有的文件都在这个文件夹下，如果后续出了什么bug或者进行电脑移植，对这个文件夹操作就OK了</p>
-</li>
-</ol>
-<ul>
-<li>cd 到当前创建的blog的文件夹下</li>
-<li>进行初始化：<strong>hexo init</strong>，这里需要Git环境的，可能会比较慢，耐心等待</li>
-<li>最终生成的文件如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-d5407316cfe1d3a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本地文件生成样式"></li>
-</ul>
-<ol start="6">
-<li>四个简单重要的命令<blockquote>
-<p>hexo n “我的第一篇博文”  #新建一篇博文，会在/source/_posts下生成一个.md文件<br>hexo clean  #清理当前工作空间<br>hexo g   #这里的g是generate的缩写，表示生成静态资源<br>hexo s  #开启本地服务  </p>
-</blockquote>
-</li>
-</ol>
-<p>效果图如下：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-90b719bca29086db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="四个命令"></p>
-<p>我们可以通过：<strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong> 实现本地访问</p>
-<p>至此，hexo的安装与运行过程结束</p>
-<hr>
-<h2 id="二、发布到Github"><a href="#二、发布到Github" class="headerlink" title="二、发布到Github"></a>二、发布到Github</h2><p>我觉得建一个公网可以访问的web，还是蛮骄傲的事情吧！（我大概是个傲娇的人hhh）</p>
-<ol>
-<li><p>登陆github账号，右上角+号，新建一个repository</p>
-</li>
-<li><p>这里repo的命名是很讲究的：必须是 github的username.github.io,如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-4eede0c42a1dc52a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-</li>
-<li><p>需要安装一个插件：</p>
-<blockquote>
-<p>cnpm install –save hexo-deployer-git </p>
-</blockquote>
-</li>
-</ol>
-<p>这里会有一个Warning忽略即可</p>
-<ol start="4">
-<li>文件配置，在blog文件下有一个很重要的文件 _config.yml ，后续的一些列美化都会用到这个文件<br>打开，找到deploy节点，进行填充，如图：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-96b2eea375214aec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改配置文件"></li>
-</ol>
-<ol start="5">
-<li>部署到远端，，过程中需要输入github账号和密码<br><strong>这里的密码输入默认是无显示的，大家不要以为是没输入进去</strong><blockquote>
-<p>hexo d  </p>
-</blockquote>
-</li>
-</ol>
-<p>如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-003911d59cc4545d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="push到github"><br>至此，大功告成，我们可以登录网站查看，地址对应的改成自己的就ok了，可能会有一点延迟：<br><a href="https://note.youdao.com/" target="_blank" rel="noopener"></a><a href="https://nwpuwuhaibo.github.io/" target="_blank" rel="noopener">https://nwpuwuhaibo.github.io/</a></p>
-<p>##后续<br>1.当前自带的样式你一定不喜欢，下一篇文章告诉你如何更换主题<br>2.更换中的一些注意事项<br>3.如何用markdown开始写第一篇博文<br>4.如何用图床提高自己的写作效率</p>
-
+        
+          <a class="article-more-a" href="/2019/06/30/Hexo-Github搭建个人博客入坑全过程/#more">more >></a>
+        
       
 
       
@@ -385,34 +318,9 @@
       
         <p>##前言<br>作为一个合格的程序员，不帅怎么行<br><img src="https://upload-images.jianshu.io/upload_images/14227444-0f78a1c33e8d82cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo原生样式"><br><img src="https://upload-images.jianshu.io/upload_images/14227444-76d26e71288820e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我的博客"></p>
 <p>Hexo的官方给提供了近百种样式，可以参考<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a>。我的建议是，肯定要有PC和移动端兼容的版式。<br>目前主流的样式主题有yilia（我目前采用的主题）和Next两种，本文以yilia为例进行主题更换讲解。</p>
-<p>##一、yilia主题的安装<br>这个主题的github仓库地址为：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a><br>1.首先cd 到blog文件夹下,clone当前主题到themes文件夹下</p>
-<blockquote>
-<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
-</blockquote>
-<p>2.修改根目录的配置文件_config.yml<br>*注意修改的不是yilia主题下的_config.yml<br>*找到Themes节点，将主题名称修改为yilia，注意有一个空格字符哦<br><img src="https://upload-images.jianshu.io/upload_images/14227444-da8bebe263e6fcc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改主题"></p>
-<p>3.重新生成并启动Hexo<br>日常三步:</p>
-<blockquote>
-<p>hexo clean<br>hexo g<br>hexo s<br>目前为止，主题已经更换完成，其他主题的更换也都大同小异。</p>
-</blockquote>
-<p>##yilia修改美化<br>1.更改常用信息<br>网站名称，头像，用户名，以及连接的微博地址等等肯定都需要修改呗<br>这里大家自己去看_config.yml应该就能知道了,我不细说，直接上图<br>首先是根目录下的config.yml：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-0b8cc0ea67b4ce99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="根目录配置文件修改"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14227444-d4fae2ea86d5923f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="yilia主题配置文件修改"></p>
-<p><strong>关于图像的修改，以头像修改为例</strong></p>
-<ul>
-<li>如果是本地图片，需要将图片放到<strong>\blog\themes\yilia\source\img</strong>目录下</li>
-<li>找到Avatar节点，添加地址<br><img src="https://upload-images.jianshu.io/upload_images/14227444-bf2a3fc1a6eb1d7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="头像节点修改"></li>
-</ul>
-<p>其他图片的修改类似</p>
-<h2 id="添加字数与浏览统计"><a href="#添加字数与浏览统计" class="headerlink" title="添加字数与浏览统计"></a>添加字数与浏览统计</h2><p>字数统计参考：<a href="https://www.jianshu.com/p/40a247c61cb0" target="_blank" rel="noopener">https://www.jianshu.com/p/40a247c61cb0</a></p>
-<p>hexo添加访问量统计功能可以用百度的站长统计、leancloud、不蒜子等等<br>我参考的是这一篇博文：<a href="https://blog.csdn.net/LF21011501/article/details/88884820" target="_blank" rel="noopener">https://blog.csdn.net/LF21011501/article/details/88884820</a></p>
-<p>Tips:功能显示可能会有一段时间之后才出现，但是文章阅读量十几分钟之后才正常，所以需要一些等待。</p>
-<p>##添加背景音乐<br>也是很简单，主要的一点是确定想要放置的区域<br>参考文章：<a href="https://www.jianshu.com/p/f3fe5cb74d32" target="_blank" rel="noopener">https://www.jianshu.com/p/f3fe5cb74d32</a></p>
-<p>##添加评论功能<br>评论的系统有很多，有言、畅言、网易云、来必力等等，目前我实现的是来必力（韩国人做的），但确实速度很慢，畅言还没过审核，后续试试畅言再更新。<br>来必力的参考博文：<a href="https://www.cnblogs.com/pengwenzheng/p/8407479.html" target="_blank" rel="noopener">https://www.cnblogs.com/pengwenzheng/p/8407479.html</a></p>
-<p>##后续</p>
-<ul>
-<li>Markdown语法介绍</li>
-<li>如何通过图床实现快速写作</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/07/01/Hexo-yilia主题优化/#more">more >></a>
+        
       
 
       
@@ -426,104 +334,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/01/Hexo-yilia主题优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-海波的一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/30/海波的一篇文章/">海波的一篇文章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/30/海波的一篇文章/" class="archive-article-date">
-  	<time datetime="2019-06-30T08:51:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
-</a>
-
-
-
-       
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">17字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.haibo.cn" target="_blank" rel="noopener">www.haibo.cn</a></p>
-
-      
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/30/海波的一篇文章/">展开全文 >></a>
         </p>
       
 
