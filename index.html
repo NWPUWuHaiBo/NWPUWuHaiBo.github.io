@@ -321,11 +321,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>前一篇文章说到，作为合格的程序员一定要帅。今天我再扯一句，程序员的尊严就是，坚决不买VIP。（如果牵扯到知识产权，这句话不算数啊~）<br>我举个栗子：<br>看个腾讯视频，去广告、看VIP视频，整个插件不就完事了<br>想听某个音乐，IPV6校园网download不就好了<br>整个图床，自己手动搭建不就好了</p>
+        <p>##序<br>前一篇文章说到，作为合格的程序员一定要帅。今天我再扯一句，程序员的尊严就是，坚决不买VIP。（如果牵扯到知识产权，这句话不算数啊~）<br>我举个栗子：<br>看个腾讯视频，去广告、看VIP视频，整个插件不就完事了<br>想听某个音乐，IPV6校园网download不就好了<br>整个图床，自己手动搭建不就好了</p>
 <p>好，那今天就写如何使用图床软件</p>
-        
-          <a class="article-more-a" href="/2019/07/03/Markdown写作介绍与图床使用/#more">more >></a>
-        
+<p>##一、Markdown编辑器介绍<br>网页版：CSDN、简书、博客园等等都是支持Markdown标记语法的<br>独立应用：有道云笔记、Notepad++、VsCode等等</p>
+<p>这里表扬一下简书，可以直接：Ctrl+Alt+A截图，然后Ctrl+V直接贴上去，其他的平台我不清楚</p>
+<p>批评一下有道云笔记，可以支持上述操作，但要开会员，，，（伟大的程序员怎么可以低头呢）</p>
+<p>Tips：简书是可以实时预览的：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-b0347a3a03daa6f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="简书打开预览模式"></p>
+<p>##二、Markdown基本语法<br>程序员写文章肯定通用Markdown啊，按照编程语言的逻辑去理解，大概3-5分钟就能学会吧。<br>我是参考的：<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a><br>这里牵扯到的唯一麻烦的事情就是<strong>图片问题</strong>。</p>
+<p>##三、如何搭建图床<br>所以如果你想解决图床问题，那么我给的建议是自己搭建一个图床云，网上有很多教程，在我一番探索之后我觉得PicGo+七牛云最好用了，基本的操作流程就是：Ctrl+Alt+A（剪切）–&gt;  Ctrl+Alt+X（上传，这个键位是可以自定义的）–&gt; Ctrl+V（粘贴）</p>
+<ul>
+<li>注册一个七牛云账号：<br>七牛一共有10G的免费空间，不限制上传流量，但是每月有请求次数限制，给一般的小博客当图床是足够了，很常规的注册，不会的面壁<br>需要实名认证，三天内审核会过<br>网站：<a href="https://portal.qiniu.com/" target="_blank" rel="noopener">https://portal.qiniu.com/</a></li>
+</ul>
+<hr>
+<ul>
+<li>创建一个Bucket<br>对象存储 –&gt; 新建存储空间 –&gt; 填写内容（我的理解：地区选择离自己近的） –&gt; 创建完成<br><img src="https://upload-images.jianshu.io/upload_images/14227444-be741d2a29214599.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建一个Bucket"></li>
+</ul>
+<hr>
+<ul>
+<li>下载PicGo<br>各类平台的下载链接如下：<blockquote>
+<p>链接：<a href="https://pan.baidu.com/s/1f3s4cD6gRF3hs6aD8_YTpg" target="_blank" rel="noopener">https://pan.baidu.com/s/1f3s4cD6gRF3hs6aD8_YTpg</a><br>提取码：xoic </p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li>配置PicGo<br><img src="https://upload-images.jianshu.io/upload_images/14227444-f49297c274785e3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置PicGo"><br>总共五个信息需要填写，前两个在七牛云的<strong>个人中心</strong>页面可以看到：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-cbb31eade88d877b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="设定Key"><br>三、四是前一步创建的Bucket，名称和地址填写一致，记得要加上<strong>http://</strong><br><img src="https://upload-images.jianshu.io/upload_images/14227444-ee99b5fdc5e9cddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Bucket信息"><br>第五个是区域信息，我选得是华东，是Z0，其他的对应就好了</li>
+</ul>
+<hr>
+<p>至此，配置就完成了，你可以设定自己的快捷键位：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-7a4e62a362917e90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改键位"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>三篇文章，算是把我这两天的博客搭建过程小结了一下，希望对你有帮助！</p>
+
       
 
       
@@ -418,10 +443,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为一个合格的程序员，不帅怎么行<br><img src="https://upload-images.jianshu.io/upload_images/14227444-0f78a1c33e8d82cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo原生样式"></p>
-        
-          <a class="article-more-a" href="/2019/07/01/Hexo-yilia主题优化/#more">more >></a>
-        
+        <p>##前言<br>作为一个合格的程序员，不帅怎么行<br><img src="https://upload-images.jianshu.io/upload_images/14227444-0f78a1c33e8d82cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hexo原生样式"><br><img src="https://upload-images.jianshu.io/upload_images/14227444-76d26e71288820e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我的博客"></p>
+<p>Hexo的官方给提供了近百种样式，可以参考<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a>。我的建议是，肯定要有PC和移动端兼容的版式。<br>目前主流的样式主题有yilia（我目前采用的主题）和Next两种，本文以yilia为例进行主题更换讲解。</p>
+<p>##一、yilia主题的安装<br>这个主题的github仓库地址为：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a><br>1.首先cd 到blog文件夹下,clone当前主题到themes文件夹下</p>
+<blockquote>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</blockquote>
+<p>2.修改根目录的配置文件_config.yml<br>*注意修改的不是yilia主题下的_config.yml<br>*找到Themes节点，将主题名称修改为yilia，注意有一个空格字符哦<br><img src="https://upload-images.jianshu.io/upload_images/14227444-da8bebe263e6fcc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改主题"></p>
+<p>3.重新生成并启动Hexo<br>日常三步:</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo s<br>目前为止，主题已经更换完成，其他主题的更换也都大同小异。</p>
+</blockquote>
+<p>##yilia修改美化<br>1.更改常用信息<br>网站名称，头像，用户名，以及连接的微博地址等等肯定都需要修改呗<br>这里大家自己去看_config.yml应该就能知道了,我不细说，直接上图<br>首先是根目录下的config.yml：<br><img src="https://upload-images.jianshu.io/upload_images/14227444-0b8cc0ea67b4ce99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="根目录配置文件修改"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14227444-d4fae2ea86d5923f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="yilia主题配置文件修改"></p>
+<p><strong>关于图像的修改，以头像修改为例</strong></p>
+<ul>
+<li>如果是本地图片，需要将图片放到<strong>\blog\themes\yilia\source\img</strong>目录下</li>
+<li>找到Avatar节点，添加地址<br><img src="https://upload-images.jianshu.io/upload_images/14227444-bf2a3fc1a6eb1d7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="头像节点修改"></li>
+</ul>
+<p>其他图片的修改类似</p>
+<h2 id="添加字数与浏览统计"><a href="#添加字数与浏览统计" class="headerlink" title="添加字数与浏览统计"></a>添加字数与浏览统计</h2><p>字数统计参考：<a href="https://www.jianshu.com/p/40a247c61cb0" target="_blank" rel="noopener">https://www.jianshu.com/p/40a247c61cb0</a></p>
+<p>hexo添加访问量统计功能可以用百度的站长统计、leancloud、不蒜子等等<br>我参考的是这一篇博文：<a href="https://blog.csdn.net/LF21011501/article/details/88884820" target="_blank" rel="noopener">https://blog.csdn.net/LF21011501/article/details/88884820</a></p>
+<p>Tips:功能显示可能会有一段时间之后才出现，但是文章阅读量十几分钟之后才正常，所以需要一些等待。</p>
+<p>##添加背景音乐<br>也是很简单，主要的一点是确定想要放置的区域<br>参考文章：<a href="https://www.jianshu.com/p/f3fe5cb74d32" target="_blank" rel="noopener">https://www.jianshu.com/p/f3fe5cb74d32</a></p>
+<p>##添加评论功能<br>评论的系统有很多，有言、畅言、网易云、来必力等等，目前我实现的是来必力（韩国人做的），但确实速度很慢，畅言还没过审核，后续试试畅言再更新。<br>来必力的参考博文：<a href="https://www.cnblogs.com/pengwenzheng/p/8407479.html" target="_blank" rel="noopener">https://www.cnblogs.com/pengwenzheng/p/8407479.html</a></p>
+<p>##后续</p>
+<ul>
+<li>Markdown语法介绍</li>
+<li>如何通过图床实现快速写作</li>
+</ul>
+
       
 
       
